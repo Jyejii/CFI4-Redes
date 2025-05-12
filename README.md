@@ -20,6 +20,7 @@ https://github.com/Jyejii/CFI4-Redes.git
 
 ## Diagrama
 ![](https://github.com/Jyejii/CFI4-Redes/blob/main/Captura%20de%20pantalla%202025-05-13%20015046.png)
+![]()
 -------------------------------------------------------
 # 1.Capa Física
 ## Capacidad de los enlaces
