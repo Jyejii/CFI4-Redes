@@ -36,6 +36,21 @@ C = 100 * 10^6 * log₂(1 + 3162.2) = 1162.7 Mbps
 Para el sistema cableado B=80*10^6<br>
 C=80*10^6*log₂ (1+3162.2)=930.1 Mbps<br>
 ## Selección de modulación
+Para la modernización de la infraestructura de comunicaciones de una ciudad inteligente, se comparan las siguientes técnicas de modulación:
+
+BPSK: Baja eficiencia espectral (1 bit/símbolo) pero alta robustez ante interferencias. Ideal para enlaces inalámbricos en entornos ruidosos y de emergencia.
+
+QPSK: Mejora la eficiencia (2 bits/símbolo) con moderada robustez. Adecuada para enlaces inalámbricos que requieren mayor velocidad pero sin alta interferencia.
+
+16-QAM: Alta eficiencia espectral (4 bits/símbolo) y adecuada para enlaces de alta capacidad. Menos robusta ante interferencias, ideal para enlaces cableados controlados.
+
+64-QAM: Muy alta eficiencia (6 bits/símbolo), adecuada para enlaces de alta velocidad, pero requiere condiciones ideales de señal. Utilizable en enlaces cableados de alta capacidad.
+
+Uso:
+
+Enlaces Cableados: 16-QAM o 64-QAM para alta capacidad.
+
+Enlaces Inalámbricos: BPSK o QPSK para mayor robustez en entornos ruidosos.
 ## Selección de Modulación y Evaluación de Encapsulamiento
 
 Se hará uso del método OFDM, usando WiFi 5/6 y 5G, que permite transmisión eficiente con múltiples usuarios y baja interferencia.
@@ -46,8 +61,8 @@ Se envían 1000 bytes incluyendo:
 - Cabecera IP = 20 bytes  
 - Cabecera MAC (802.11) = 34 bytes  
 - Tráiler (FCS y otros) = 4 bytes  
-
 **Sobrecarga:** 78 bytes  
 **Eficiencia:**  
 \[ Eficiencia = 1000/(1000 + 78) = 92.8%]  
 Sobrecarga: 7.2%
+----------------------------------------------
