@@ -20,7 +20,9 @@ https://github.com/Jyejii/CFI4-Redes.git
 
 ## Diagrama
 ![](https://github.com/Jyejii/CFI4-Redes/blob/main/Captura%20de%20pantalla%202025-05-13%20015046.png)
-![]()
+![](https://github.com/Jyejii/CFI4-Redes/blob/main/Captura%20de%20pantalla%202025-05-13%20014846.png)
+<p>como se puede observar, se separa la red en dos partes,la de seguridad,medioambiente y trafico que contiene un firewall y un anillo de switches sencillo cada uno con sus respectivos dispositivos, como camaras,semaforos y alarmas. Por el otro lado se puede ver los edificios gubernamentales como oficinas, ayuda al ciudadano y sala multimedia, para acceder a este parte se pasa por una zona desmilitarizada que contiene servidores como el FTP,Web y email,despues conecta un anillo de switches que conectan las salas de oficina,ayuda al cliente que contienen pcs, un acces point y un telefono,sala audiovisual que contiene una pcs,acces point,telefono,camara y micrófono.<p>
+  
 -------------------------------------------------------
 # 1.Capa Física
 ## Capacidad de los enlaces
