@@ -19,7 +19,7 @@ https://github.com/Jyejii/CFI4-Redes.git
 4.	Capa de Aplicación	Equivalen a las capas 5, 6 y 7 del modelo OSI. Protocolos de trasnferencia, FTP y SFTP, manejo de contenidos HTTP y HTTPS, etc...
 
 ## Diagrama
-!{}(https://github.com/Jyejii/CFI4-Redes/blob/main/Captura%20de%20pantalla%202025-05-13%20015046.png)
+![](https://github.com/Jyejii/CFI4-Redes/blob/main/Captura%20de%20pantalla%202025-05-13%20015046.png)
 -------------------------------------------------------
 # 1.Capa Física
 ## Capacidad de los enlaces
