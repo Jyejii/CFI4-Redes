@@ -1,6 +1,7 @@
 # CFI4-Redes
 https://github.com/Jyejii/CFI4-Redes.git
 ------------------------------------------
+# 1.Diseño y Modelado.
 ## Modelo OSI y TCP/IP 
 -	Modelo OSI
 1.	Capa Física	Encargado de la transmisión real de bits a través de medios físicos, por ejemplo: cables, wifi. En esta capa se hacen los cálculos de capacidad de canal (fórmula de Shannon).
@@ -21,3 +22,16 @@ https://github.com/Jyejii/CFI4-Redes.git
 ````````
 ````````
 -------------------------------------------------------
+# 1.Capa Física
+## Capacidad de los enlaces
+Capa Fisica 
+Usamos la formula de Shannon:<br>
+Un buen nivel de de SNR para tanto cableado como inalámbrico seria de 35Db<br>
+SNR lineal= 10^(SNR/10)		Shannon= C=B*log₂* (1+SNR)<br>
+SNR lineal =10^((35/10) )=3162.2<br>
+
+Para el sistema inalámbrico B=100*10^6<br>
+C = 100 * 10^6 * log₂(1 + 3162.2) = 1162.7 Mbps
+<br>
+Para el sistema cableado B=80*10^6<br>
+C=80*10^6*log₂ (1+3162.2)=930.1 Mbps<br>
