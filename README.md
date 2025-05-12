@@ -35,3 +35,19 @@ C = 100 * 10^6 * log₂(1 + 3162.2) = 1162.7 Mbps
 <br>
 Para el sistema cableado B=80*10^6<br>
 C=80*10^6*log₂ (1+3162.2)=930.1 Mbps<br>
+## Selección de modulación
+## Selección de Modulación y Evaluación de Encapsulamiento
+
+Se hará uso del método OFDM, usando WiFi 5/6 y 5G, que permite transmisión eficiente con múltiples usuarios y baja interferencia.
+
+**Encapsulamiento:**  
+Se envían 1000 bytes incluyendo:  
+- Cabecera TCP = 20 bytes  
+- Cabecera IP = 20 bytes  
+- Cabecera MAC (802.11) = 34 bytes  
+- Tráiler (FCS y otros) = 4 bytes  
+
+**Sobrecarga:** 78 bytes  
+**Eficiencia:**  
+\[ Eficiencia = 1000/(1000 + 78) = 92.8%]  
+Sobrecarga: 7.2%
