@@ -1,6 +1,6 @@
 # CFI4-Redes
 https://github.com/Jyejii/CFI4-Redes.git
-
+------------------------------------------
 ## Modelo OSI y TCP/IP 
 -	Modelo OSI
 1.	Capa Física	Encargado de la transmisión real de bits a través de medios físicos, por ejemplo: cables, wifi. En esta capa se hacen los cálculos de capacidad de canal (fórmula de Shannon).
@@ -16,3 +16,8 @@ https://github.com/Jyejii/CFI4-Redes.git
 2.	Capa de Internet	Se asemeja a la capa de red del modelo OSI. En este se gestiona las direcciones IP y el enrutamiento, por ejemplo, el algoritmo de DIjkstra.
 3.	Capa de Transporte	Parecida a la capa de transporte del modelo OSI. Gestiona los servicios de transporte ya sea confiable o sin conexión, TCP y UDP.
 4.	Capa de Aplicación	Equivalen a las capas 5, 6 y 7 del modelo OSI. Protocolos de trasnferencia, FTP y SFTP, manejo de contenidos HTTP y HTTPS, etc...
+
+## Diagrama
+````````
+````````
+-------------------------------------------------------
