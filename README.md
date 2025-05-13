@@ -68,3 +68,52 @@ Se envían 1000 bytes incluyendo:
 \[ Eficiencia = 1000/(1000 + 78) = 92.8%]  
 Sobrecarga: 7.2%
 ----------------------------------------------
+# Capa de Red 
+## Diseño de esquema y direccionamiento IP
+`Zona Gubernamental (10.0.0.0/24):`
+
+Dirección de red: 10.0.0.0
+
+Dirección de Broadcast: 10.0.0.255
+
+Rango de hosts: 10.0.0.1 – 10.0.0.254`
+
+`Servicio Transporte, Ambiental y Seguridad (10.0.1.0/24):`
+
+Dirección de red: 10.0.1.0
+
+Dirección de Broadcast: 10.0.1.255
+
+Rango de hosts: 10.0.1.1 – 10.0.1.254
+
+`Atención Ciudadana (10.0.2.0/24):`
+
+Dirección de red: 10.0.2.0
+
+Dirección de Broadcast: 10.0.2.255
+
+Rango de hosts: 10.0.2.1 – 10.0.2.254
+
+`Oficinas (10.0.3.0/24):`
+
+Dirección de red: 10.0.3.0
+
+Dirección de Broadcast: 10.0.3.255
+
+Rango de hosts: 10.0.3.1 – 10.0.3.254
+
+`Sala Multimedia (10.0.4.0/24):`
+
+Dirección de red: 10.0.4.0
+
+Dirección de Broadcast: 10.0.4.255
+
+Rango de hosts: 10.0.4.1 – 10.0.4.254
+
+`Servidores Internos (10.0.5.0/24):`
+
+Dirección de red: 10.0.5.0
+
+Dirección de Broadcast: 10.0.5.255
+
+Rango de hosts: 10.0.5.1 – 10.0.5.254
