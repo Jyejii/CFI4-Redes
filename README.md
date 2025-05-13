@@ -283,4 +283,70 @@ Para la transmisión de video en tiempo real desde cámaras de seguridad y event
 - **Acceso entre zonas controlado con ACLs y firewall.**
 - **Dispositivos IoT aislados y sin acceso a zonas críticas.**
 
+## Cifrado y autentificacion
 
+---
+
+##  Implementación de Servicios y Resolución de Nombres
+
+### Servicios Configurados
+
+- **DNS:** Servidor interno para `*.ciudadinteligente.local`, con reenvío a DNS externos.  
+  - 🔌 Puerto: UDP/TCP 53
+- **SFTP:** Transferencia segura de archivos.  
+  - 🔌 Puerto: TCP 22
+- **HTTP/HTTPS:** Portal web y multimedia para ciudadanos y administradores.  
+  - 🔌 Puertos: TCP 80 / 443
+
+### Resolución de Nombres
+
+1. El cliente consulta al DNS interno.
+2. Si el nombre está en la zona local, responde directamente.
+3. Si no, reenvía a un servidor externo.
+4. El cliente accede al servicio usando la IP obtenida.
+
+### Multiplexación
+
+- **HTTP/2:** Múltiples solicitudes en una sola conexión.
+- **SFTP:** Soporte de sesiones concurrentes.
+- **NAT/PAT:** Traducción de puertos para múltiples clientes y servicios.
+
+---
+
+## Servicios Multimedia
+
+### Métodos de Transmisión
+
+- **UDP Streaming (RTP):** Para videovigilancia en tiempo real (baja latencia).
+- **DASH (Adaptive HTTP Streaming):** Para eventos públicos y contenido multimedia en la web.
+
+### Adaptación de Calidad
+
+- Evaluación del ancho de banda por parte del cliente.
+- Cambio dinámico de resolución y tasa de bits (1080p, 720p, 480p).
+- Uso de buffers para evitar interrupciones (en DASH).
+
+---
+
+## Políticas y Medidas de Seguridad
+
+### VPN entre Zonas Críticas
+
+- VPN IPSec Site-to-Site entre oficinas gubernamentales y centros de control.
+- Autenticación con IKEv2 y cifrado AES-256.
+
+### Firewalls y ACLs
+
+#### Firewall Perimetral
+
+- Permitir solo tráfico esencial (HTTPS, DNS, VPN).
+- Bloqueo de accesos entrantes no autorizados.
+- Reglas específicas para servicios internos expuestos.
+
+#### ACLs Internas
+
+```plaintext
+deny ip any 192.168.10.0 0.0.0.255     ! Bloquea acceso desde zonas públicas
+permit ip 192.168.20.0 0.0.0.255 any   ! Oficinas acceden a recursos internos
+deny ip any any log                    ! Registra y bloquea todo lo demás
+```
