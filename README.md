@@ -350,3 +350,8 @@ deny ip any 192.168.10.0 0.0.0.255     ! Bloquea acceso desde zonas públicas
 permit ip 192.168.20.0 0.0.0.255 any   ! Oficinas acceden a recursos internos
 deny ip any any log                    ! Registra y bloquea todo lo demás
 ```
+------------
+# CISCO
+![](https://github.com/Jyejii/CFI4-Redes/blob/main/Captura%20de%20pantalla%202025-05-13%20165038.png)
+![](https://github.com/Jyejii/CFI4-Redes/blob/main/Captura%20de%20pantalla%202025-05-13%20165058.png)
+![](https://github.com/Jyejii/CFI4-Redes/blob/main/Captura%20de%20pantalla%202025-05-13%20165121.png)
