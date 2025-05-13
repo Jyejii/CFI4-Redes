@@ -70,6 +70,7 @@ Sobrecarga: 7.2%
 ----------------------------------------------
 # Capa de Red 
 ## Diseño de esquema y direccionamiento IP
+Se asignarán bloques de direcciones IPv4 en base a la necesidad de cada segmento, generalmente comenzando con una red más grande para áreas con más dispositivos.<br>
 `Zona Gubernamental (10.0.0.0/24):`
 
 Dirección de red: 10.0.0.0
