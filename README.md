@@ -164,3 +164,78 @@ Ventana óptima = 1,000,000bps X 0.05 segundos = 50,000 bits
 6,250bytes / 1,500 bytes = 4.17 = 4 segmentos MSS
 Con un RTT de 50 ms y un ancho de banda de 1 Mbps, **4 segmentos MSS** pueden estar en tránsito simultáneamente.
 
+# Capa de aplicación
+## Implementación de Servicios y Resolución de Nombres
+
+### Servicios Configurados
+
+### 🌐 DNS
+- Ubicación: Zona de servidores internos.
+- Función: Resolución de nombres internos (`*.ciudadinteligente.local`) y externos mediante reenviadores.
+- Puerto: UDP/TCP 53
+
+### 🔐 SFTP
+- Ubicación: Servicios gubernamentales.
+- Función: Transferencia segura de archivos.
+- Puerto: TCP 22
+
+### 🧾 HTTP/HTTPS
+- Ubicación: Servicios gubernamentales y sala multimedia.
+- Función: Portal ciudadano, monitoreo y servicios multimedia.
+- Puertos: TCP 80 / 443
+
+### Proceso de Resolución de Nombres
+
+1. El cliente consulta el DNS local.
+2. El DNS responde con la IP correspondiente.
+3. Si no existe en la zona local, reenvía a servidores externos.
+4. El cliente se conecta al servicio deseado (web, FTP, etc.).
+
+### Multiplexación de Solicitudes
+
+- **HTTP/2:** Manejo de múltiples flujos sobre una sola conexión.
+- **SFTP:** Sesiones paralelas por usuario.
+- **NAT/PAT:** Traducción de puertos para gestionar múltiples accesos desde Internet.
+
+### Conectividad
+
+- Segmentación por zonas: transporte, multimedia, oficinas, atención ciudadana.
+- Interconexión mediante switches y routers.
+- Seguridad y control de tráfico vía firewall y VLANs.
+
+##  Servicios Multimedia
+
+### Métodos de Transmisión
+
+Para la transmisión de video en tiempo real desde cámaras de seguridad y eventos públicos se emplearán:
+
+- **UDP Streaming (RTP sobre UDP):**
+  - Ideal para CCTV y vigilancia en tiempo real.
+  - Menor latencia.
+  - Tolerancia a pequeñas pérdidas de paquetes.
+
+- **Adaptive HTTP Streaming (DASH):**
+  - Utilizado para eventos públicos y contenidos accesibles desde el portal web.
+  - Segmenta el video en fragmentos y ajusta la calidad según el ancho de banda.
+  - Compatible con HTTP/HTTPS, sin necesidad de protocolos especiales.
+
+### Adaptación Dinámica de Calidad
+
+- **Medición Continua del Ancho de Banda:**
+  - El cliente mide la velocidad de descarga de fragmentos (en DASH).
+  - En UDP, el servidor puede disminuir la tasa de bits si detecta pérdida de paquetes.
+
+- **Escalado de Resolución y Bitrate:**
+  - Perfiles de calidad: 1080p, 720p, 480p.
+  - Cambio automático entre perfiles dependiendo del rendimiento de red del cliente.
+
+- **Buffer Dinámico:**
+  - DASH utiliza buffers para prevenir interrupciones durante cambios de calidad.
+  - Se prioriza fluidez sobre resolución en redes inestables.
+
+### Ejemplos de Uso
+
+- **Cámaras de tráfico/seguridad:** UDP para menor latencia en centros de control.
+- **Eventos públicos / transmisiones web:** DASH para escalabilidad y soporte multiplataforma.
+
+
