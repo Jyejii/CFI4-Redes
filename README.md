@@ -141,3 +141,26 @@ UDP:
 | **Mayor Eficiencia en el Ancho de Banda** | UDP es más ligero y eficiente al no tener mecanismos de control, lo que permite un uso óptimo del ancho de banda para datos en tiempo real. |
 | **Tolerancia a la Pérdida de Paquetes** | La pérdida de algunos paquetes no afecta mucho a la calidad del servicio en tiempo real, como en el caso de alertas de tráfico o video en vivo. |
 | **Simplicidad en la Implementación**   | UDP es más sencillo de implementar, lo que mejora el rendimiento de aplicaciones en tiempo real sin sobrecargar los recursos de procesamiento. |
+
+## Calculo tamaño de ventana TCP
+
+### Cálculo del Tamaño de Ventana en TCP
+
+**Fórmula:**
+Ventana óptima = Ancho de banda X RTT
+
+#### Parámetros:
+- **RTT** = 50 ms = 0.05 segundos
+- **MSS** = 1,500 bytes
+- **Ancho de banda** = 1 Mbps = 1,000,000 bps
+
+#### Paso 1: Convertir RTT a segundos
+50ms = 0.05segundos
+#### Paso 2: Calcular la ventana óptima en bits
+Ventana óptima = 1,000,000bps X 0.05 segundos = 50,000 bits
+#### Paso 3: Convertir la ventana óptima a bytes
+50,000 bits / 8 = 6,250 bytes
+#### Paso 4: Calcular el número de segmentos MSS
+6,250bytes / 1,500 bytes = 4.17 = 4 segmentos MSS
+Con un RTT de 50 ms y un ancho de banda de 1 Mbps, **4 segmentos MSS** pueden estar en tránsito simultáneamente.
+
