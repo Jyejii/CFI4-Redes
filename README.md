@@ -169,12 +169,12 @@ Con un RTT de 50 ms y un ancho de banda de 1 Mbps, **4 segmentos MSS** pueden es
 
 ### Servicios Configurados
 
-### 🌐 DNS
+### DNS
 - Ubicación: Zona de servidores internos.
 - Función: Resolución de nombres internos (`*.ciudadinteligente.local`) y externos mediante reenviadores.
 - Puerto: UDP/TCP 53
 
-### 🔐 SFTP
+### SFTP
 - Ubicación: Servicios gubernamentales.
 - Función: Transferencia segura de archivos.
 - Puerto: TCP 22
@@ -237,5 +237,50 @@ Para la transmisión de video en tiempo real desde cámaras de seguridad y event
 
 - **Cámaras de tráfico/seguridad:** UDP para menor latencia en centros de control.
 - **Eventos públicos / transmisiones web:** DASH para escalabilidad y soporte multiplataforma.
+
+# Capa de seguridad
+##  Políticas y Medidas de Seguridad
+
+###  Conectividad Segura mediante VPN
+
+- **Segmentos Protegidos:**
+  - Enlace cifrado entre el centro de control de emergencias (transporte y seguridad) y oficinas gubernamentales.
+- **Tecnología:** VPN IPSec Site-to-Site.
+- **Propósito:** Evitar exposición de datos sensibles en tránsito (ej. monitoreo ambiental, videovigilancia, datos ciudadanos).
+- **Autenticación y Cifrado:**
+  - IKEv2 con certificados.
+  - AES-256 para cifrado de túneles.
+
+---
+
+###  Firewalls y Listas de Control de Acceso (ACLs)
+
+#### 1. **Firewall Perimetral (en cada zona con Internet)**
+- **Reglas:**
+  - Permitir tráfico saliente HTTP/HTTPS, DNS y VPN.
+  - Bloquear accesos entrantes no autorizados desde Internet.
+  - Permitir solo puertos específicos hacia servidores (TCP 443, 22, etc.).
+
+#### 2. **ACLs en Switches/Routers Internos**
+- **Ejemplo de reglas:**
+  - `deny ip any 192.168.10.0 0.0.0.255` → Evita que zonas públicas accedan a servidores internos.
+  - `permit ip 192.168.20.0 0.0.0.255 any` → Permite acceso desde oficinas a recursos compartidos.
+  - `deny ip any any log` → Última regla para registrar intentos bloqueados.
+
+---
+
+###  Monitoreo y Auditoría
+
+- **Sistemas de registro (syslog):** Captura de eventos de red y alertas de seguridad.
+- **IDS/IPS:** Detección de intrusos y patrones de ataque (Snort, Suricata).
+- **Actualizaciones regulares:** Aplicación de parches de seguridad en todos los dispositivos.
+
+---
+
+###  Aislamiento de Zonas
+
+- **Segmentación mediante VLANs:** Transporte, servidores, oficinas, multimedia.
+- **Acceso entre zonas controlado con ACLs y firewall.**
+- **Dispositivos IoT aislados y sin acceso a zonas críticas.**
 
 
