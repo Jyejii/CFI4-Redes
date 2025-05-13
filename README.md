@@ -125,4 +125,19 @@ El enrutamiento por inundación o flooding, el protocolo inunda toda la red de p
 
 # Capa de transporte
 ## Selección de protocolo de transporte
+El uso de TCP (Protocolo de Control de Transmisión) para servicios que requieren alta fiabilidad, como la transferencia de archivos o actualizaciones de bases de datos, y el uso de UDP (Protocolo de Datagramas de Usuario) para servicios en tiempo real, como el streaming de cámaras o alertas de tráfico, se justifica en función de las características y necesidades de cada tipo de servicio.<br>
+TCP:
+| Característica                       | Explicación                                                                                                                                     |
+|---------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Fiabilidad y Control de Errores**   | Garantiza la entrega ordenada y sin errores de los datos, fundamental para la transferencia de archivos y actualizaciones de bases de datos.   |
+| **Confirmación de Recepción**         | Asegura que los datos han llegado correctamente al destino antes de continuar con la transmisión.                                               |
+| **Control de Congestión y Flujo**     | Ajusta la cantidad de datos enviados para evitar la sobrecarga de la red, garantizando la eficiencia en servicios críticos.                    |
+| **Reensamblaje y Recuperación**       | Permite la retransmisión de paquetes perdidos, asegurando que no se pierdan datos en aplicaciones críticas como la transferencia de archivos.  |
 
+UDP:
+| Característica                        | Explicación                                                                                                                         |
+|----------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
+| **Bajo Retardo**                       | UDP reduce significativamente la latencia, lo cual es esencial en servicios en tiempo real como el streaming de cámaras y alertas.  |
+| **Mayor Eficiencia en el Ancho de Banda** | UDP es más ligero y eficiente al no tener mecanismos de control, lo que permite un uso óptimo del ancho de banda para datos en tiempo real. |
+| **Tolerancia a la Pérdida de Paquetes** | La pérdida de algunos paquetes no afecta mucho a la calidad del servicio en tiempo real, como en el caso de alertas de tráfico o video en vivo. |
+| **Simplicidad en la Implementación**   | UDP es más sencillo de implementar, lo que mejora el rendimiento de aplicaciones en tiempo real sin sobrecargar los recursos de procesamiento. |
