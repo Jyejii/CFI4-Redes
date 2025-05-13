@@ -118,3 +118,9 @@ Dirección de red: 10.0.5.0
 Dirección de Broadcast: 10.0.5.255
 
 Rango de hosts: 10.0.5.1 – 10.0.5.254
+
+## Enrutamiento y rutas dinámicas.
+El algoritmo de dijkstra busca la ruta mas corta entre los diferentes nodos de la red, en el caso del camino de zona de seguridad y zona de emergencias, la mejor opción seria el acceso directo ya que se encuentran en un anillo de 3 switches.
+El enrutamiento por inundación o flooding, el protocolo inunda toda la red de paquetes y encuentra la ruta mas óptima,es útil como respaldo pero a largo plazo no es viable debido a la sobrecarga generada.Por lo que se puede usar como ruta de reespaldo si el protocolo principal falla.
+
+
